@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Escapebar Project Overview</title>
+    <meta name="description" content="Escapebar Project Overview" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/jpeg/avatar.jpg"
+              alt="Mick Wang Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Mick Wang</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link">Home</a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About</a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">Projects</a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link">Contact</a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Escapebar</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            The most popular real-escape-games information website in Taiwan. User can view basic information and reviews of games, then post personal reviews and get achievements through contributing contents.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://escape.bar" class="btn btn--bg" target="_blank">Visit Website</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/png/escapebar-overview.png"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                Currently, Escapebar mainly represents as a web appilication which includes one frontend server and three backend service behind.<br/>
+                When user enter Escapebar through browser, the frontend server will request necessary product data from <strong>backend for frontend (BFF)</strong> server and response server-side rendered document by <strong>Next.js</strong>. <br/>
+                <strong>React</strong> takes the rest rendering works triggered by client. Browser will request necessary user data if the user has been authenticated.<br/>
+                To improve performance, use <strong>browser cache</strong> and <strong>service worker cache</strong> to prevent unnecessary data requests and render faster. BFF also cache product data in memory for rapid response.<br/>
+                (Under development) User can send request through LINE chatbot, the sentence will be parsed by <strong>Dialogflow</strong> and return the intent to BFF, and BFF responses possible result. User can interact with the result and open web page in LIFF(LINE Front-end Framework) with Vue.js framework.
+              </p>
+            </div>
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Main Features</h3>
+              <p class="project-details__desc-para">
+                1. Adopted Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) for faster rendering.<br/>
+                2. Provides meta data and rich results for better search engine results.<br/>
+                3. Adopted Progressive Web Application (PWA) for service workder cache and resulted in higher retention rate.<br/>
+                4. Adopted code splitting and lazy loading for better web vitals performance.<br/>
+                5. Tracks user behavior properly for understanding and improving User Experience.
+              </p>
+            </div>
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Frontend Design and Performance</h3>
+              <p class="project-details__desc-para">
+                For better rendering performance, adopted both <strong>Server-Side Rendering (SSR)</strong> and <strong>Incremental Static Regeneration (ISR)</strong> powered by Next.js.
+                SSR for dynamic content with high updating frequency, ISR for dynamic content with low updating frequency.
+              </p>
+              <p class="project-details__desc-para">
+                Routing: Next Router.
+              </p>
+              <p class="project-details__desc-para">
+                Code splitting and lazy loading: Next Dynamic Import.
+              </p>
+              <p class="project-details__desc-para">
+                State management: Redux, Context API.
+              </p>
+              <p class="project-details__desc-para">
+                UI libraries: Material-UI, Ant Design.
+              </p>
+              <p class="project-details__desc-para">
+                File caching: Next PWA.
+              </p>
+              <p class="project-details__desc-para">
+                1. PageSpeed Insight performance score raised from 10 to 70 due to SSR, code splitting and faster API response.<br/>
+                2. By feeding Google Search Engine rich results, most product pages could rank in TOP 10 when specific product keywords be searched, and ISR pages could rank in TOP 5 in similar topics.<br/>
+                3. Improved user retention rate 450% by supporting Progressive Web Application.
+              </p>
+            </div>
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Backend System Design and Performance</h3>
+              <p class="project-details__desc-para">
+                Currently, Escapebar backend system includes three services.
+              </p>
+              <p class="project-details__desc-para">
+                Content Management System: <strong>WordPress</strong> as headless CMS, provide data to BFF and frontend through RESTful API. Runs on GCP Compute Enegine VM.<br/>
+              </p>
+              <p class="project-details__desc-para">
+                Serverless Backend Service: <strong>Firebase</strong> for authentication, database(NoSQL), file storage functions. Mainly stores user data and user generated content.<br/>
+              </p>
+              <p class="project-details__desc-para">
+                Backend For Frontend: Built by <strong>Node.js</strong> and <strong>Express.js</strong>, provides <strong>RESTful API</strong> to handle requests from frontend and does cron jobs those should be done periodically. This server runs as <strong>container</strong> for the advantage of auto scaling on GCP Cloud Run.
+              </p>
+              </p>
+              <p class="project-details__desc-para">
+                In the earlier version, frontend requests Firebase data through <strong>Firebase Cloud Functions</strong>, but the responding time is long due to its "cold start" feature.<br/>
+                For fast reponse, move the business logic from Cloud Functions to Cloud Run, and the repsonding time reduced to 10% (from 3,000ms to 300ms) after this change.<br/>
+                When frontend requests product data which are low updating frequency, the BFF server provide data from <strong>memory cache</strong>, this feature reduced responding time to 20% (300ms to around 60ms).
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">HTML5</div>
+                <div class="skills__skill">CSS3</div>
+                <div class="skills__skill">JavaScript</div>
+                <div class="skills__skill">PHP</div>
+                <div class="skills__skill">React</div>
+                <div class="skills__skill">Next.js</div>
+                <div class="skills__skill">Redux</div>
+                <div class="skills__skill">Vue.js</div>
+                <div class="skills__skill">PWA</div>
+                <div class="skills__skill">Material UI</div>
+                <div class="skills__skill">Ant Design</div>
+                <div class="skills__skill">Node.js</div>
+                <div class="skills__skill">Express.js</div>
+                <div class="skills__skill">Firebase</div>
+                <div class="skills__skill">NoSQL</div>
+                <div class="skills__skill">WordPress</div>
+                <div class="skills__skill">GCP</div>
+                <div class="skills__skill">LINE messaging API</div>
+                <div class="skills__skill">LINE Frontend-end Framework</div>
+                <div class="skills__skill">GTM</div>
+                <div class="skills__skill">Google Analysis</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>
+              <a
+                href="#"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+              >
+                Visit Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/ming-ching-wang-7a8133116/">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/Mickwangmc">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Mick Ming-Ching Wang 王銘慶</h4>
+            <p class="main-footer__short-desc">
+              Believing in the power of the internet will make the world better. Entrepreneurial and embraces innovations, enthusiastic in web application development and pursuing personal growth by doing in practice.
+            </p>
+          </div>
+        </div>
+        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Original Template Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Ram Maheshwari</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
