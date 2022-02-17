@@ -103,27 +103,29 @@
               <h3 class="project-details__content-title">Project Overview</h3>
               <p class="project-details__desc-para">
                 Currently, Escapebar mainly represents as a web appilication which includes one frontend server and three backend service behind.<br/>
-                When user enter Escapebar through browser, the frontend server will request necessary product data from <strong>backend for frontend (BFF)</strong> server and response server-side rendered document by <strong>Next.js</strong>. <br/>
-                <strong>React</strong> takes the rest rendering works triggered by client. Browser will request necessary user data if the user has been authenticated.<br/>
-                To improve performance, use <strong>browser cache</strong> and <strong>service worker cache</strong> to prevent unnecessary data requests and render faster. BFF also cache product data in memory for rapid response.<br/>
-                (Under development) User can send request through LINE chatbot, the sentence will be parsed by <strong>Dialogflow</strong> and return the intent to BFF, and BFF responses possible result. User can interact with the result and open web page in LIFF(LINE Front-end Framework) with Vue.js framework.
+                When user enter Escapebar through browser, the frontend server will request necessary product data from <strong>backend for frontend (BFF)</strong>, and the BFF server responses server-side rendered document by <strong>Next.js</strong>. <br/>
+                <strong>React</strong> takes the rest rendering works triggered in the browser. Browser will request necessary user data if the user has been authenticated and logged in.<br/>
+                To improve performance, use <strong>browser caching</strong> and <strong>service worker caching</strong> to prevent unnecessary data requests and to render faster. BFF also cache product data in memory for rapid response.<br/>
+                (Under development) User can send request through LINE chatbot, the sentence will be parsed by <strong>Dialogflow</strong> and return the intent to BFF, and BFF responses possible result to client (in LINE chatbot). User can interact with the result and open web page in LIFF(LINE Front-end Framework) with Vue.js framework.
               </p>
             </div>
             <div class="project-details__desc">
               <h3 class="project-details__content-title">Main Features</h3>
               <p class="project-details__desc-para">
-                1. Adopted Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) for faster rendering.<br/>
-                2. Provides meta data and rich results for better search engine results.<br/>
-                3. Adopted Progressive Web Application (PWA) for service workder cache and resulted in higher retention rate.<br/>
-                4. Adopted code splitting and lazy loading for better web vitals performance.<br/>
-                5. Tracks user behavior properly for understanding and improving User Experience.
+                1. Adopted Server-Side Rendering (SSR) and Static-Site Generation (SSG) for faster rendering.<br/>
+                2. Provides meta data and rich results (in JSON-LD format) for better search engine results.<br/>
+                3. Adopted Progressive Web Application (PWA) for service worker caching and resulted in higher retention rate.<br/>
+                4. Uses browser caching, throttle and debounce mechanism to prevent unnecessary requests.
+                5. Adopted code splitting and lazy loading for better performance.<br/>
+                6. Tracks user behaviors with Google Tag Manager(GTM), for understanding and improving User Interface and User Experience (UI/UX).
               </p>
             </div>
             <div class="project-details__desc">
               <h3 class="project-details__content-title">Frontend Design and Performance</h3>
               <p class="project-details__desc-para">
-                For better rendering performance, adopted both <strong>Server-Side Rendering (SSR)</strong> and <strong>Incremental Static Regeneration (ISR)</strong> powered by Next.js.
-                SSR for dynamic content with high updating frequency, ISR for dynamic content with low updating frequency.
+                For better rendering performance, adopted both <strong>Server-Side Rendering (SSR)</strong> and <strong>Static-Site Generation (SSG)</strong> powered by Next.js.
+                SSR for dynamic content with high updating frequency, SSG for dynamic content with low updating frequency.<br/>
+                Related libraries:
               </p>
               <p class="project-details__desc-para">
                 Routing: Next Router.
@@ -142,8 +144,8 @@
               </p>
               <p class="project-details__desc-para">
                 1. PageSpeed Insight performance score raised from 10 to 70 due to SSR, code splitting and faster API response.<br/>
-                2. By feeding Google Search Engine rich results, most product pages could rank in TOP 10 when specific product keywords be searched, and ISR pages could rank in TOP 5 in similar topics.<br/>
-                3. Improved user retention rate 450% by supporting Progressive Web Application.
+                2. By feeding Google Search Engine rich results, most product pages could rank in TOP 10 when specific product keywords be searched, and SSG pages could rank in TOP 5 in similar topics.<br/>
+                3. Improved user retention rate 450% by supporting PWA.
               </p>
             </div>
             <div class="project-details__desc">
@@ -152,19 +154,19 @@
                 Currently, Escapebar backend system includes three services.
               </p>
               <p class="project-details__desc-para">
-                Content Management System: <strong>WordPress</strong> as headless CMS, provide data to BFF and frontend through RESTful API. Runs on GCP Compute Enegine VM.<br/>
+                Content Management System: <strong>WordPress</strong> as headless CMS, provides data to BFF and frontend through RESTful API. Runs on GCP Compute Enegine VM.<br/>
               </p>
               <p class="project-details__desc-para">
                 Serverless Backend Service: <strong>Firebase</strong> for authentication, database(NoSQL), file storage functions. Mainly stores user data and user generated content.<br/>
               </p>
               <p class="project-details__desc-para">
-                Backend For Frontend: Built by <strong>Node.js</strong> and <strong>Express.js</strong>, provides <strong>RESTful API</strong> to handle requests from frontend and does cron jobs those should be done periodically. This server runs as <strong>container</strong> for the advantage of auto scaling on GCP Cloud Run.
+                Backend For Frontend: Built by <strong>Node.js</strong> and <strong>Express.js</strong>, provides <strong>RESTful API</strong> to handle requests from frontend and runs periodically cron jobs. This server runs as <strong>container</strong> for the advantage of auto scaling on GCP Cloud Run.
               </p>
               </p>
               <p class="project-details__desc-para">
                 In the earlier version, frontend requests Firebase data through <strong>Firebase Cloud Functions</strong>, but the responding time is long due to its "cold start" feature.<br/>
-                For fast reponse, move the business logic from Cloud Functions to Cloud Run, and the repsonding time reduced to 10% (from 3,000ms to 300ms) after this change.<br/>
-                When frontend requests product data which are low updating frequency, the BFF server provide data from <strong>memory cache</strong>, this feature reduced responding time to 20% (300ms to around 60ms).
+                For fast responding, move the business logic from Cloud Functions to Cloud Run, and the repsonding time reduced 90% (from 3,000ms to 300ms) after this change.<br/>
+                When frontend requests product data which are low updating frequency, the BFF server responses data from <strong>memory cache</strong>, this feature reduced responding time 80% (300ms to around 60ms).
               </p>
             </div>
             <div class="project-details__tools-used">
